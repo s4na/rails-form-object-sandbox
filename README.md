@@ -1,24 +1,23 @@
-# README
+# Rails Form Object Sandbox
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## セットアップ
 
-Things you may want to cover:
+```
+./bin/setup
+```
 
-* Ruby version
+## サーバー起動
 
-* System dependencies
+```
+./bin/webpack-dev-server
+```
 
-* Configuration
+別ターミナルで
 
-* Database creation
+```
+./bin/rails s
+```
 
-* Database initialization
+## 参考
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Railsのデザインパターン: Formオブジェクト - applis](https://applis.io/posts/rails-design-pattern-form-objects)
