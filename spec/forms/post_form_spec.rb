@@ -20,6 +20,9 @@ RSpec.describe Post, type: :form do
 
         expect(post_form.title).to eq '日記1'
         expect(post_form.content).to eq 'あめんぼ青いなあいうえお'
+
+        post = Post.find_by(title: '日記1')
+        expect(post.content).to eq 'あめんぼ青いなあいうえお'
       end
     end
 
@@ -36,7 +39,29 @@ RSpec.describe Post, type: :form do
 
         expect(post_form.title).to eq '日記2'
         expect(post_form.content).to eq '腹減った'
+
+        post = Post.find_by(title: '日記2')
+        expect(post.content).to eq '腹減った'
       end
+    end
+  end
+
+  describe '#update' do
+    let!(:post) { Post.new({ title: '日記1', content: 'あめんぼ青いなあいうえお' }) }
+
+    before do
+      post.save
+    end
+
+    it do
+      post_form = PostForm.new(post)
+      post_form.update({ title: '日記2', content: '腹減った' })
+
+      expect(post_form.title).to eq '日記2'
+      expect(post_form.content).to eq '腹減った'
+
+      post = Post.find_by(title: '日記2')
+      expect(post.content).to eq '腹減った'
     end
   end
 

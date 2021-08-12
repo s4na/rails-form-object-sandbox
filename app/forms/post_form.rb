@@ -23,6 +23,11 @@ class PostForm
     false
   end
 
+  def update(params)
+    self.attributes = params
+    save
+  end
+
   def to_model
     post
   end
