@@ -2,7 +2,8 @@
 
 FactoryBot.define do
   factory :post do
-    title { 'MyString' }
-    content { 'MyText' }
+    title { 'PostName' }
+    content { 'PostTitle' }
+    category_id { nil }
   end
 end
