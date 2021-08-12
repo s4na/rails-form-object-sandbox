@@ -32,4 +32,5 @@ ex)
 
 ## 参考
 
-[Railsのデザインパターン: Formオブジェクト - applis](https://applis.io/posts/rails-design-pattern-form-objects)
+- [Railsのデザインパターン: Formオブジェクト - applis](https://applis.io/posts/rails-design-pattern-form-objects)
+- [Rails: Form Objectと`#to_model`を使ってバリデーションをモデルから分離する（翻訳）](https://techracho.bpsinc.jp/hachi8833/2018_03_02/51350)
