@@ -1,5 +1,7 @@
 # Rails Form Object Sandbox
 
+`Form.new.save.update` 可能なForm Objectを作成する。
+
 ## セットアップ
 
 ```
