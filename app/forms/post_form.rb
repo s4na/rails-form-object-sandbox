@@ -7,7 +7,7 @@ class PostForm
 
   validates :title, presence: true
 
-  def initialize(post: Post.new, **attributes)
+  def initialize(post = Post.new, **attributes)
     @post = post
     attributes ||= default_attributes
     super(attributes)
