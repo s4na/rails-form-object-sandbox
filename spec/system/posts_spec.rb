@@ -23,7 +23,7 @@ RSpec.describe 'Posts', type: :system do
 
   describe '投稿の編集' do
     it do
-      post = create(:post)
+      create(:post)
 
       visit posts_path
       click_on 'Edit'
