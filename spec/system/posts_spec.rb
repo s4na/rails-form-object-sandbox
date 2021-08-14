@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :system do
@@ -45,7 +47,7 @@ RSpec.describe 'Posts', type: :system do
       expect(page).to have_current_path(posts_path, url: true)
       expect(page).to have_no_content(post.title)
       expect(page).to have_no_content(post.content)
-      expect{ post.reload }.raise_error(ActiveRecord::RecordNotFound)
+      expect { post.reload }.raise_error(ActiveRecord::RecordNotFound)
     end
   end
 end

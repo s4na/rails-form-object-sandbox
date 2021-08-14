@@ -62,7 +62,7 @@ RSpec.describe 'Posts', type: :request do
       post = create(:post)
       delete post_path(post)
       expect(response).to have_http_status(302)
-      expect{ post.reload }.to raise_error(ActiveRecord::RecordNotFound)
+      expect { post.reload }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
 end
