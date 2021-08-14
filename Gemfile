@@ -53,3 +53,9 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
+
+# Not default
+group :development, :test do
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
+end
