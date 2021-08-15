@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :system do
@@ -29,9 +31,9 @@ RSpec.describe 'Posts', type: :system do
       fill_in 'post_content', with: '肩凝った'
       click_on 'Update Post'
 
-      expect(page).to have_current_path(posts_path, url: true)
-      expect(page).to have_no_content('日記6')
-      expect(page).to have_no_content('肩凝った')
+      expect(page).to have_current_path(post_path(post), url: false)
+      expect(page).to have_content('日記6')
+      expect(page).to have_content('肩凝った')
     end
   end
 
@@ -42,10 +44,10 @@ RSpec.describe 'Posts', type: :system do
       visit posts_path
       click_on 'Destroy'
 
-      expect(page).to have_current_path(posts_path, url: true)
+      expect(page).to have_current_path(posts_path, url: false)
       expect(page).to have_no_content(post.title)
       expect(page).to have_no_content(post.content)
-      expect{ post.reload }.raise_error(ActiveRecord::RecordNotFound)
+      expect { post.reload }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
 end

@@ -7,9 +7,11 @@ class PostForm
 
   validates :title, presence: true
 
+  delegate :persisted?, to: :post
+
   def initialize(post = Post.new, **attributes)
     @post = post
-    attributes ||= default_attributes
+    attributes = default_attributes if attributes.empty?
     super(attributes)
   end
 
